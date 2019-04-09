@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class loginpage extends AppCompatActivity {
 
@@ -18,4 +19,11 @@ public class loginpage extends AppCompatActivity {
         startActivity(in);
     }
 
+        public void homeit(View v){
+            Intent in=new Intent(this,h.class);
+            startActivity(in);
+        }
+
 }
+
+
