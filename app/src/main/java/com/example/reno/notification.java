@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class notification extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class notification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        FirebaseApp.initializeApp(this);
         final TextInputEditText titletext=(TextInputEditText)findViewById(R.id.title_id);
        final TextInputEditText contenttext=(TextInputEditText)findViewById(R.id.content_id);
         Button nbutton=(Button) findViewById(R.id.nbutton_id) ;
@@ -54,6 +56,7 @@ public class notification extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+
                         String msg = "Successful";
                         if (!task.isSuccessful()) {
                             msg = "Failed";
